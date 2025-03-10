@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Images/favicon.png" type="image/x-icon">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Perfil</title>
+</head>
+<body class="text-white bg-[#181818]">
+
+    <div id="navbar" 
+        class="w-full justify-center h-3/6 lg:h-screen relative grid grid-rows-100 min-h-600 max-h-800 text-white before:absolute before:top-0 before:left-0 before:right-0 bg-center"
+    >
+    </div>
+
+    <div id="notification" class="fixed top-20 right-0 left-0 z-50"></div>
+
+    <main class="grid justify-center justify-self-center pt-8">
+        <div class="w-full text-center grid justify-center justify-self-center">
+            <!-- Biografía -->
+            <p id="bio" class="w-9/12 justify-self-center justify-center text-center flex">
+            </p>
+            <a href="" id="knowledge" class="mt-4 w-auto justify-self-center grid gap-4 overflow-hidden my-0 mx-auto no-underline bg-[#f97020ec] py-[8px] px-[17px] rounded-lg transition duration-300 hover:bg-[#ff4800c2]">
+                Conocer más
+            </a>
+
+            <!-- Secciones -->
+            <div id="projects" class="gap-8 md:gap-4 pt-10 flex flex-wrap w-11/12 my-0 mx-auto pb-8">                
+            </div>
+
+            <!-- Nueva sección -->
+            <main id="main" class="grid justify-center justify-self-center pt-4">
+            </main>
+            
+            <!-- Contacto -->
+            <div id="contact" class="gap-8 md:gap-4 pt-10 flex flex-wrap flex-col w-[90%] my-0 mx-auto pb-8">
+            </div>
+        </div>
+    </main>
+
+    <script src="/components/nav.js"></script>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="/components/notification.js"></script>
+</body>
+</html>
