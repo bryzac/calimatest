@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Images/favicon.png" type="image/x-icon">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/styles/output.css">
+    <title></title>
+</head>
+<body class="text-white bg-[#181818]">
+
+    <div id="navbar" 
+        class="w-full justify-center h-3/6 lg:h-screen relative grid max-h-800 text-white before:absolute before:top-0 before:left-0 before:right-0 bg-center"
+    >
+    </div>
+    <div id="notification" class="fixed top-20 right-0 left-0 z-50"></div>
+
+    <div id="addPublish" class="justify-center relative grid grid-rows-100 text-white before:absolute before:top-0 before:left-0 before:right-0 bg-center right-0 w-16 top-[80%]">
+    </div>
+
+
+    <main id="main" class="grid justify-center justify-self-center pt-4 pb-8">
+        <div class="w-full text-center grid justify-center justify-self-center">
+            <!-- Secciones -->
+            <form id="form" class="gap-6 md:gap-8 px-4 flex flex-wrap w-full overflow-hidden my-0 mx-auto pb-8 items-center justify-center">
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="/components/nav.js"></script>
+    <script type="module" src="/components/projectnav.js"></script>
+    <script type="module" src="/components/notification.js"></script>
+</body>
+</html>

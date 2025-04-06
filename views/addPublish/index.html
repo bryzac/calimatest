@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Images/favicon.png" type="image/x-icon">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/styles/output.css">
+    <title>Nueva publicación</title>
+</head>
+<body class="text-white bg-[#181818]">
+    <div id="navbar" 
+        class="w-full justify-center h-3/6 relative grid max-h-800 text-white before:absolute before:top-0 before:left-0 before:right-0 bg-center"
+    >
+    </div>
+
+    <div id="notification" class="fixed top-20 right-0 left-0 z-50"></div>
+    
+    <div id="title" class="justify-center justify-self-center flex flex-wrap w-[90%] mx-auto overflow-hidden py-8">
+    </div>
+
+    <main class="flex justify-center justify-self-center w-full">
+        <div id="publish" class="justify-center justify-self-center gap-14 md:gap-4 flex flex-wrap w-[90%] my-0 mx-auto overflow-hidden pb-8">
+            <form id="form" 
+                class="flex flex-col gap-4 bg-black p-4 rounded-lg text-md shadow-lg lg:w-3/4 md:w-4/5 w-full" 
+                enctype="multipart/form-data" method="post"
+            >
+                <div class="flex flex-col gap-2 max-w-96">
+                    <label for="title-input" class="font-bold">
+                        Título
+                    </label>
+                    <input 
+                        type="text" 
+                        id="title-input" 
+                        name="titleinput" 
+                        autocomplete="off"
+                        class="text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    >
+                </div>
+                
+                <div class="flex flex-col gap-2">
+                    <label for="dedicatory-input" class="font-bold">
+                        Dedicatoria
+                    </label>
+                    <input 
+                        type="text" 
+                        id="dedicatory-input" 
+                        name="dedicatoryinput" 
+                        autocomplete="off"
+                        class="text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    >
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="epigraph-input" class="font-bold">
+                        Epígrafe
+                    </label>
+                    <textarea 
+                        type="text" 
+                        id="epigraph-input" 
+                        name="epigraphinput" 
+                        autocomplete="off"
+                        class="h-24 text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    ></textarea>
+                </div>
+                
+                <div class="flex flex-col gap-2 max-w-72">
+                    <label for="epigraphBy-input" class="font-bold">
+                        Autor (del epígrafe)
+                    </label>
+                    <input 
+                        type="text" 
+                        id="epigraphBy-input" 
+                        name="epigraphByinput" 
+                        autocomplete="off"
+                        class="text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    >
+                </div>
+                
+                <div class="flex flex-col gap-2">
+                    <label for="text-input" class="font-bold">
+                        Texto
+                    </label>
+                    <textarea 
+                        type="text" 
+                        id="text-input" 
+                        name="textinput" 
+                        autocomplete="off"
+                        class="h-96 text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    ></textarea>
+                </div>
+
+                <div 
+                    class="flex flex-col gap-2"
+                >
+                    <label for="image-input" class="font-bold">
+                        Imagen
+                    </label>
+                    <input 
+                    type="file" 
+                    accept="image/*"
+                    id="image-input" 
+                    name="imageinput"
+                    class="text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700 cursor-pointer"
+                    >
+                    <img src="" 
+                        class="" alt="" 
+                        id="image-show"
+                    >
+                    <button id="delete-image"
+                        type="button"
+                        class="self-end text-red-600 hover:text-red-400 hidden"
+                    >
+                        Eliminar
+                    </button>
+                </div>
+                
+                <div class="flex flex-col gap-2 max-w-44">
+                    <label for="date-input" class="font-bold">
+                        Año
+                    </label>
+                    <input 
+                        type="text" 
+                        id="date-input" 
+                        name="dateinput" 
+                        autocomplete="off"
+                        class="text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    >
+                </div>
+                
+                <div class="flex flex-col gap-2">
+                    <label for="additional-input" class="font-bold">
+                        Texto adicional
+                    </label>
+                    <textarea 
+                        type="text" 
+                        id="additional-input" 
+                        name="additionalinput" 
+                        autocomplete="off"
+                        class="h-24 text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    ></textarea>
+                </div>
+                
+                <div class="flex flex-col gap-2">
+                    <label for="nominations-input" class="font-bold">
+                        Nominaciones
+                    </label>
+                    <textarea 
+                        type="text" 
+                        id="nominations-input" 
+                        name="nominationsinput" 
+                        autocomplete="off"
+                        class="h-16 text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    ></textarea>
+                </div>
+                
+                <div class="flex flex-col gap-2">
+                    <label for="awards-input" class="font-bold">
+                        Premios
+                    </label>
+                    <textarea 
+                        type="text" 
+                        id="awards-input" 
+                        name="awardsinput" 
+                        autocomplete="off"
+                        class="h-16 text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    ></textarea>
+                </div>
+                
+                <div class="flex flex-col gap-2">
+                    <label for="link-input" class="font-bold">
+                        Enlaces (antologías o libro)
+                    </label>
+                    <input 
+                        type="text" 
+                        id="link-input" 
+                        name="linkinput" 
+                        autocomplete="off"
+                        class="text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700"
+                    >
+                </div>
+
+                <div 
+                    class="flex flex-col gap-2"
+                >
+                    <label for="file-input" class="font-bold">
+                        Archivo
+                    </label>
+                    <input 
+                    type="file" 
+                    id="file-input" 
+                    name="fileinput"
+                    class="text-black rounded-lg p-2 bg-zinc-100 focus:outline-slate-700 cursor-pointer"
+                    >
+                    <embed id="fileShow" class="hidden">
+                    <button id="delete-file"
+                        type="button"
+                        class="self-end text-red-600 hover:text-red-400 hidden"
+                    >
+                        Eliminar
+                    </button>
+                </div>
+
+                <div class="flex flex-raw gap-2 items-center py-2">
+                    <label for="public-input" class="font-bold">
+                        Público:
+                    </label>
+                    <input 
+                        type="checkbox" 
+                        id="public-input" 
+                        name="publicinput" 
+                        class="self-start ml-6 size-8 rounded-[8px] align-middle"
+                        checked
+                    >
+                </div>
+
+                <input class="hidden" type="text" name="id" id="hidden">
+
+                <button 
+                    id="save-btn"
+                    class="bg-[#f97020ec] py-2 px-4 rounded-lg font-bold hover:bg-[#ff4800c2] text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-black"
+                >
+                    Guardar cambios
+                </button>
+                <button 
+                    id="cancel-btn"
+                    class="bg-red-600 py-2 px-4 rounded-lg font-bold hover:bg-red-500 text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-black w-1/3 mx-auto"
+                >
+                    Cancelar
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="/components/nav.js"></script>
+    <script type="module" src="/components/notification.js"></script>
+</body>
+</html>
