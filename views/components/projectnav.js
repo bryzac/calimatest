@@ -1,7 +1,7 @@
 import { createNotification } from "../../../components/notification.js";
 export const projectnav = async (pathName, vdesktop, vmobile) => {
     const { data } = await axios.get(`/api/project/${pathName}`);
-    const { title, isOwner, icon, artistic, image } = data;
+    const { title, isOwner, icon, artistic, image, userID } = data;
 
     let srcImage = '';
     if (image !== '') {

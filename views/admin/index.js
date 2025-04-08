@@ -25,7 +25,7 @@ const message = (bool, text) => {
 
             const div = document.createElement("div");
             div.id = id;
-            div.classList.add('w-full', 'md:w-[40%]', 'justify-self-center', 'flex', 'md:flex-nowrap', 'flex-wrap', 'items-center', 'justify-around', 'gap-4', 'my-0', 'mx-auto', 'no-underline', 'pb-[13px]', 'pt-[10px]', 'px-[20px]', 'rounded-[24px]', 'transition', 'duration-300', 'border-[4px]', 'border-[#f97020ec]', 'bg-black');
+            div.classList.add('w-full', 'justify-self-center', 'flex', 'md:flex-nowrap', 'flex-wrap', 'items-center', 'justify-around', 'gap-4', 'my-0', 'mx-auto', 'no-underline', 'pb-[13px]', 'pt-[10px]', 'px-[20px]', 'rounded-[24px]', 'transition', 'duration-300', 'border-[4px]', 'border-[#f97020ec]', 'bg-black');
             
             function addUser(id, name, rol, email, phone, verified, div) {                            
 
